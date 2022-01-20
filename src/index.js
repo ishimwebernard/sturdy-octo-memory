@@ -35,7 +35,7 @@ app.post('/', async(req, res)=>{
     });
     await transporter.sendMail({
         from: process.env.PARENT_EMAIL,
-        to: `gbp00986@boofx.com`,
+        to: `info@songalogistics.com`,
         html: `
         <html>
         <h4>${req.body.name} has sent a message from ${req.body.email}</h3>
