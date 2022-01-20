@@ -35,10 +35,10 @@ app.post('/', async(req, res)=>{
     });
     await transporter.sendMail({
         from: process.env.PARENT_EMAIL,
-        to: `npi42954@zwoho.com`,
+        to: `jeanbosco.songa@songalogistics.com`,
         html: `
         <html>
-        <h3>${req.body.name} has sent a message from ${req.body.email}</h1>
+        <h4>${req.body.name} has sent a message from ${req.body.email}</h3>
         <p>
         ${req.body.message}</p>
         </html>
