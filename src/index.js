@@ -35,7 +35,7 @@ app.post('/', async(req, res)=>{
     });
     await transporter.sendMail({
         from: process.env.PARENT_EMAIL,
-        to: `jeanbosco.songa@songalogistics.com`,
+        to: `gbp00986@boofx.com`,
         html: `
         <html>
         <h4>${req.body.name} has sent a message from ${req.body.email}</h3>
@@ -46,11 +46,12 @@ app.post('/', async(req, res)=>{
         subject: "A new message from Songa Web"
     });
     console.log("Success")
-return {message: 'Email sent succesfully'}   
+    return res.status(200).send({message: 'Email sent succesfully'})
+    
 }catch(error){
 const _error = `Failed sending the email to , Please try again ...`;
 console.log(error)
-return {error: _error};
+return res.send({error: _error});
 }
 })
 app.listen(process.env.PORT || 8000, ()=>{
